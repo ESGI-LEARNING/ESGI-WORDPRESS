@@ -1,0 +1,191 @@
+
+.sidebar {
+  position: relative;
+  width: 100%;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media (min-width: 1024px) {
+    min-width: 370px;
+    max-width: 500px;
+    padding-right: 0;
+  }
+
+  .search-section,
+  .recent-posts,
+  .categories-section,
+  .archives-section,
+  .tags-section {
+    position: relative;
+
+    .section-title {
+      margin-bottom: 30px;
+      font-size: 1.6rem;
+      color: #1e293b;
+
+      @media (min-width: 1024px) {
+        font-size: 2rem;
+      }
+    }
+
+    .searchform {
+      input[name="s"] {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        padding-bottom: 8px;
+        outline: none;
+        color: black;
+        border-bottom: 2px solid #4a5568;
+        background-color: transparent;
+      }
+
+      input[type="submit"] {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        text-indent: -9999px;
+        z-index: 10;
+        background-image: url('https://nas-mat.synology.me/hosted-img/icons/search-black.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .recent-posts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      .recent-post {
+        display: flex;
+        gap: 2.5rem;
+
+        a {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .post-thumbnail {
+          width: 8.8rem;
+          flex-shrink: 0;
+
+          img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+          }
+        }
+
+        .post-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex: 1;
+
+          .post-title {
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+            color: #8A8A8A; 
+
+            @media (min-width: 1024px) {
+              font-size: 2rem;
+            }
+          }
+
+          .post-date {
+            font-size: 1rem;
+            color: #8A8A8A; 
+
+            @media (min-width: 1024px) {
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+
+    .categories-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        a {
+          display: flex;
+          gap: 10px;
+          font-size: 1.6rem;
+          color: #8A8A8A; 
+
+          @media (min-width: 1024px) {
+            font-size: 2rem;
+          }
+        }
+
+        &::before {
+          content: "\2022";
+          color: pink;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+        }
+      }
+    }
+
+    .archive-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        a {
+          display: flex;
+          gap: 10px;
+          font-size: 1.6rem;
+          color: #8A8A8A; 
+
+          @media (min-width: 1024px) {
+            font-size: 2rem;
+          }
+        }
+
+        &::before {
+          content: "\2022";
+          color: pink;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+        }
+      }
+    }
+
+    .tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      a {
+        padding: 5px;
+        font-size: 1rem;
+        color: #8A8A8A; 
+        font-weight: 500;
+        background-color: #f8f8f8;
+
+        @media (min-width: 1024px) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.main-content {
+  min-height: calc(100vh - 38rem);
+  max-width: 192rem;
+  margin: 0 auto;
+  padding-top: 13.5rem;
+}
+
+.partners-section {
+  margin-bottom: 6.5rem;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 13rem;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+
+  .section-title {
+    margin-left: 3rem;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #1e293b;
+
+    @media (min-width: 1024px) {
+      margin-left: 5rem;
+      font-size: 5rem;
+    }
+
+    @media (min-width: 1280px) {
+      margin-left: 15rem;
+      font-size: 7rem;
+    }
+  }
+}

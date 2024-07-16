@@ -1,0 +1,15 @@
+{
+  "name": "project_wordpress_esgi-main",
+  "version": "1.0.0",
+  "description": "## Introduction",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch ESGI-theme/assets/scss/app.scss ESGI-theme/style.css",
+    "build": "sass ESGI-theme/assets/scss/app.scss ESGI-theme/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.77.6"
+  }
+}

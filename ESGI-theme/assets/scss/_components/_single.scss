@@ -1,0 +1,241 @@
+.main-content {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-top: 135px;
+}
+
+.blog-section {
+  margin-left: 30px;
+  margin-bottom: 65px;
+
+  @media (min-width: 1024px) {
+    margin-left: 50px;
+    margin-bottom: 130px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-left: 150px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: 1024px) {
+    gap: 65px;
+  }
+
+  @media (min-width: 1280px) {
+    gap: 130px;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #1e293b;
+
+    @media (min-width: 1024px) {
+      font-size: 5rem;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 7rem;
+    }
+  }
+
+  .blog-content {
+    display: flex;
+    gap: 50px;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+
+    .content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      @media (min-width: 1024px) {
+        gap: 65px;
+      }
+
+      @media (min-width: 1280px) {
+        gap: 130px;
+      }
+
+      .article-content {
+        width: 100%;
+        max-width: 105rem;
+        margin: 0 auto;
+        display: flex;
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 50px;
+
+        .post-thumbnail {
+          width: 100%;
+          height: 150px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          @media (min-width: 1024px) {
+            height: 300px;
+          }
+
+          @media (min-width: 1280px) {
+            height: 500px;
+          }
+        }
+
+        .post-meta {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #050A3A;
+
+        }
+
+        .post-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+
+          .tag-link {
+            padding: 5px;
+            font-size: 1.2rem;
+            color: #737373;
+            font-weight: 500;
+            background-color: #f8f8f8;
+
+            @media (min-width: 1024px) {
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+
+      .comments-section {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .comments-title {
+          font-size: 2.5rem;
+          font-weight: 600;
+
+          @media (min-width: 1024px) {
+            font-size: 3.5rem;
+          }
+        }
+
+        .comment {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          background-color: #f9f9f9;
+          padding: 30px 40px;
+
+          .comment-author {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #050A3A;
+
+            @media (min-width: 1024px) {
+              font-size: 2.7rem;
+            }
+          }
+
+          .comment-content {
+            font-size: 1.6rem;
+            color: #737373;
+
+            @media (min-width: 1024px) {
+              font-size: 2rem;
+            }
+          }
+
+          .comment-reply {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .reply-icon {
+              width: 16px;
+              height: 14px;
+            }
+
+            .reply-link {
+              font-size: 1rem;
+              font-weight: 600;
+              cursor: pointer;
+
+              @media (min-width: 1024px) {
+                font-size: 1.25rem;
+              }
+            }
+          }
+        }
+      }
+
+      .comment-form {
+        .form-title {
+          font-size: 2.5rem;
+
+          @media (min-width: 1024px) {
+            font-size: 3.8rem;
+          }
+        }
+
+        .form-content {
+          margin-top: 45px;
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+
+          .form-input,
+          .form-textarea {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 1.6rem;
+            color: #737373;
+            font-weight: 500;
+            border-bottom: 2px solid #000;
+            outline: none;
+
+            @media (min-width: 1024px) {
+              font-size: 2rem;
+            }
+          }
+
+          .form-label {
+            font-size: 1.6rem;
+            color: #737373;
+            font-weight: 500;
+            border-left: 3px solid #000;
+            padding-left: 8px;
+
+            @media (min-width: 1024px) {
+              font-size: 2rem;
+            }
+          }
+
+          .form-submit {
+            width: 100%;
+            text-align: left;
+            font-size: 1.6rem;
+            font-weight: 600;
+            cursor: pointer;
+
+            @media (min-width: 1024px) {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

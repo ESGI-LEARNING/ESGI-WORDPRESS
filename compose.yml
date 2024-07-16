@@ -1,0 +1,36 @@
+services:
+    db:
+        image: mariadb:10.6.4-focal
+        command: "--default-authentication-plugin=mysql_native_password"
+        volumes:
+            - db_data:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=somewordpress
+            - MYSQL_DATABASE=wordpress
+            - MYSQL_USER=wordpress
+            - MYSQL_PASSWORD=wordpress
+        expose:
+            - 3306
+            - 33060
+    wordpress:
+        image: wordpress:latest
+        volumes:
+            - wp_data:/var/www/html
+            - type: bind
+              source: ./ESGI-theme
+              target: /var/www/html/wp-content/themes/ESGI-theme
+        ports:
+            - 80:80
+        environment:
+            - WORDPRESS_DB_HOST=db
+            - WORDPRESS_DB_USER=wordpress
+            - WORDPRESS_DB_PASSWORD=wordpress
+            - WORDPRESS_DB_NAME=wordpress
+            - WORDPRESS_DEBUG=true
+    adminer:
+        image: adminer
+        ports:
+            - 8080:8080
+volumes:
+    db_data:
+    wp_data:

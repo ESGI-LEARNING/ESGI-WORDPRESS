@@ -1,0 +1,87 @@
+
+.error-page {
+  min-height: calc(100vh - 38rem);
+  padding-top: 13.5rem;
+  margin: 0 auto;
+  background-color: #050A3A;
+
+  .error-section {
+    max-width: 105rem;
+    margin-top: 4rem;
+    padding: 0 3rem 6.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    @media (min-width: 1024px) {
+      margin-top: 8rem;
+      padding: 0 5rem 13rem;
+    }
+
+    @media (min-width: 1280px) {
+      padding: 0 15rem 13rem;
+    }
+
+    .error-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: white;
+
+      @media (min-width: 1024px) {
+        font-size: 3.75rem;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 5rem;
+      }
+    }
+
+    .error-message {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      color: white;
+
+      @media (min-width: 1024px) {
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 1.875rem;
+      }
+    }
+
+    .searchform {
+      position: relative;
+      z-index: 0;
+
+      input[name="s"] {
+        width: 100%;
+        padding-bottom: .8rem;
+        outline: none;
+        color: white;
+        border-bottom: .2rem solid #4a5568;
+        background-color: transparent;
+      }
+
+      input[type="submit"] {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        text-indent: 0;
+        background-image: url('https://nas-mat.synology.me/hosted-img/icons/search.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+}
+
+.dark-mode {
+  background-color: #050A3A;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}

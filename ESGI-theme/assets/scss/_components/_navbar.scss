@@ -1,0 +1,160 @@
+.header {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  background-color: white;
+
+  .header-top {
+    width: 100%;
+    height: 13.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 1024px) {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    @media (min-width: 1280px) {
+      padding-left: 15rem;
+      padding-right: 15rem;
+    }
+
+    .logo {
+      width: 14rem;
+      height: 4.2rem;
+    }
+
+    .toggle-button {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: .4rem;
+
+      .burger-line {
+        width: 4rem;
+        height: .3rem;
+        background-color: #1e293b;
+
+        &:nth-child(2) {
+          width: 2rem;
+        }
+      }
+    }
+  }
+
+  .menu {
+    position: fixed;
+    z-index: 50;
+    top: -95rem;
+    left: 0;
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 8rem;
+    background-color: #050A3A;
+    transition: all 0.5s;
+
+    @media (min-width: 1024px) {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-bottom: 10rem;
+    }
+
+    @media (min-width: 1280px) {
+      padding-left: 15rem;
+      padding-right: 15rem;
+    }
+
+    .menu-header {
+      width: 100%;
+      height: 13.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo-white {
+        width: 14rem;
+        height: 4.2rem;
+      }
+
+      .close-button {
+        position: relative;
+        width: 16.99px;
+        height: 16.99px;
+
+        .line {
+          position: absolute;
+          width: 21px;
+          height: 3px;
+          background-color: white;
+        }
+
+        .line-1 {
+          left: 2.14px;
+          top: 0.01px;
+          transform: rotate(45deg);
+        }
+
+        .line-2 {
+          left: 16.97px;
+          top: 2.12px;
+          transform: rotate(135deg);
+        }
+      }
+    }
+
+
+    nav {
+      .main-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.5rem;
+
+        li {
+
+          a {
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: normal;
+            transition: all 0.5s;
+            position: relative;
+
+            @media (min-width: 1280px) {
+              font-size: 7rem;
+
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: -0.5rem;
+              width: 100%;
+              height: 0.3rem;
+              background: linear-gradient(90deg, #FFD0A8 0%, #FF4FC0 100%);
+              transition: all 0.5s;
+              transform: scaleX(0);
+              transform-origin: bottom right;
+            }
+
+            &:hover::after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

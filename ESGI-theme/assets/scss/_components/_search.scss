@@ -1,0 +1,179 @@
+.description, .description p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.searchform input[name="s"] {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-bottom: 8px;
+  outline: none;
+  color: black;
+  border-bottom: 2px solid #4a5568;
+  background-color: transparent;
+}
+
+.searchform input[type="submit"] {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  text-indent: -9999px;
+  z-index: 10;
+  background-image: url('https://nas-mat.synology.me/hosted-img/icons/search-black.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+}
+
+ul.categories li::before {
+  content: "\2022";
+  color: pink;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.main-container {
+  max-width: 1920px;
+  padding-top: 135px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+
+
+.section-container {
+  margin-bottom: 65px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    padding-right: 50px;
+    gap: 65px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-right: 150px;
+    margin-bottom: 130px;
+    gap: 130px;
+  }
+}
+
+.search-title {
+  display: flex;
+  gap: 10px;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1e293b;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 5rem;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 7rem;
+  }
+}
+
+.search-query {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.query-text {
+  margin-bottom: 4px;
+}
+
+
+.query-underline {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD0A8 0%, #FF4FC0 100%);
+}
+
+
+.search-form-container {
+  position: relative;
+}
+
+
+.no-results-text {
+  font-size: 1.125rem;
+  color: #6b7280;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+
+.posts-grid {
+  display: grid;
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 50px;
+
+  @media (min-width: 768px) {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+.post-link {
+  text-decoration: none;
+}
+
+
+.post-article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.post-title {
+  margin-bottom: 10px;
+  font-size: 1.125rem;
+  color: #1e293b;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 1.875rem;
+  }
+}
+
+
+.post-meta {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+
+.post-description {
+  font-size: 1.125rem;
+  color: #6b7280;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
