@@ -31,12 +31,10 @@ function esgi_query_vars($vars)
 }
 
 add_filter('query_vars', 'esgi_query_vars');
-//section SOCIAL NETWORK
 
 add_action('customize_register', 'esgi_social_network_customize_register');
 function esgi_social_network_customize_register($wp_customize)
 {
-    // section facebook
     $wp_customize->add_section('esgi_social_network_facebook', array(
         'title' => __('Facebook', 'esgi'),
         'priority' => 100,
@@ -53,7 +51,6 @@ function esgi_social_network_customize_register($wp_customize)
         'section' => 'esgi_social_network_facebook',
     ));
 
-    //section linkedin
     $wp_customize->add_section('esgi_social_network_linkedin', array(
         'title' => __('Linkedin', 'esgi'),
         'priority' => 100,
@@ -88,7 +85,6 @@ function esgi_get_social_networks()
     return $social_networks;
 }
 
-// section BLOG
 function get_post_by_category($category, $page)
 {
     $args = array(
@@ -131,7 +127,6 @@ function get_current_uri(): string
     return $url;
 }
 
-// section PAGINATION
 function enqueue_custom_scripts()
 {
     wp_enqueue_script('pagination-ajax', get_template_directory_uri() . '/assets/js/pagination-ajax.js', array('jquery'), '1.0', true);
@@ -140,12 +135,10 @@ function enqueue_custom_scripts()
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 
-//section SERVICES
 add_action('customize_register', 'esgi_services_customize_register');
 
 function esgi_services_customize_register($wp_customize)
 {
-    // Function to add section and settings
     function add_section_and_settings($wp_customize, $section_id, $section_title, $section_description)
     {
         $wp_customize->add_section($section_id, array(
@@ -179,7 +172,6 @@ function esgi_services_customize_register($wp_customize)
         ));
     }
 
-    // Add location desk section and settings
     add_section_and_settings($wp_customize, 'esgi_services_location_desk', 'Location de bureau', 'Personnaliser la localisation du bureau');
 
     $wp_customize->add_setting('esgi_services_location_desk_street', array(
@@ -204,10 +196,8 @@ function esgi_services_customize_register($wp_customize)
         'type' => 'text',
     ));
 
-    // Add manager section and settings
     add_section_and_settings($wp_customize, 'esgi_services_manager', 'Manager', 'Personnaliser les infos du manager');
 
-    // Add CEO section and settings
     add_section_and_settings($wp_customize, 'esgi_services_ceo', 'CEO', 'Personnaliser les infos du CEO');
 }
 
@@ -306,29 +296,24 @@ function esgi_get_team_members()
     return $team_members;
 }
 
-// section site logo
 add_action('customize_register', 'esgi_customize_register_site_logo');
 function esgi_customize_register_site_logo($wp_customize)
 {
-    // section logo
     $wp_customize->add_section('esgi_site_logo', array(
         'title' => __('Logo du site', 'esgi'),
         'description' => __('Personnaliser le logo du site', 'esgi'),
         'priority' => 1,
     ));
-    // setting dark
     $wp_customize->add_setting('esgi_site_logo', array(
         'default' => get_template_directory_uri() . '/assets/images/svg/logo.svg',
         'description' => __('Logo du site', 'esgi'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
-    // setting white
     $wp_customize->add_setting('esgi_site_logo_white', array(
         'default' => get_template_directory_uri() . '/assets/images/svg/logo-white.svg',
         'description' => __('Logo du site blanc', 'esgi'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
-    // control
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'esgi_site_logo', array(
         'label' => __('Logo', 'esgi'),
         'section' => 'esgi_site_logo',
@@ -363,84 +348,70 @@ function esgi_get_site_logo()
     return $site_logo;
 }
 
-// section partners
 add_action('customize_register', 'esgi_customize_register_partners');
 function esgi_customize_register_partners($wp_customize)
 {
-    // section partners
     $wp_customize->add_section('esgi_partners', array(
         'title' => __('Partenaires', 'esgi'),
         'description' => __('Personnaliser les partenaires', 'esgi'),
         'priority' => 1,
     ));
-    // setting logo partner 1
     $wp_customize->add_setting('esgi_partners_logo_1', array(
         'default' => get_template_directory_uri() . '/assets/images/svg/partner-1.png',
         'description' => __('Logo du partenaire 1', 'esgi'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
-    // setting logo partner 2
     $wp_customize->add_setting('esgi_partners_logo_2', array(
         'default' => get_template_directory_uri() . '/assets/images/svg/partner-2.png',
         'description' => __('Logo du partenaire 2', 'esgi'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
-    // setting logo partner 3
     $wp_customize->add_setting('esgi_partners_logo_3', array(
         'default' => get_template_directory_uri() . '/assets/images/svg/partner-3.png',
         'description' => __('Logo du partenaire 3', 'esgi'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
-    // setting logo partner 4
     $wp_customize->add_setting('esgi_partners_logo_4', array(
         'default' => get_template_directory_uri() . '/assets/images/svg/partner-4.png',
         'description' => __('Logo du partenaire 4', 'esgi'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
-    // setting logo partner 5
     $wp_customize->add_setting('esgi_partners_logo_5', array(
         'default' => get_template_directory_uri() . '/assets/images/svg/partner-5.png',
         'description' => __('Logo du partenaire 5', 'esgi'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
-    // setting logo partner 6
     $wp_customize->add_setting('esgi_partners_logo_6', array(
         'default' => get_template_directory_uri() . '/assets/images/svg/partner-6.png',
         'description' => __('Logo du partenaire 6', 'esgi'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
-    // control logo partner 1
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'esgi_partners_logo_1', array(
         'label' => __('Logo du partenaire 1', 'esgi'),
         'section' => 'esgi_partners',
         'settings' => 'esgi_partners_logo_1',
     )));
-    // control logo partner 2
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'esgi_partners_logo_2', array(
         'label' => __('Logo du partenaire 2', 'esgi'),
         'section' => 'esgi_partners',
         'settings' => 'esgi_partners_logo_2',
     )));
-    // control logo partner 3
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'esgi_partners_logo_3', array(
         'label' => __('Logo du partenaire 3', 'esgi'),
         'section' => 'esgi_partners',
         'settings' => 'esgi_partners_logo_3',
     )));
-    // control logo partner 4
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'esgi_partners_logo_4', array(
         'label' => __('Logo du partenaire 4', 'esgi'),
         'section' => 'esgi_partners',
         'settings' => 'esgi_partners_logo_4',
     )));
-    // control logo partner 5
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'esgi_partners_logo_5', array(
         'label' => __('Logo du partenaire 5', 'esgi'),
         'section' => 'esgi_partners',
         'settings' => 'esgi_partners_logo_5',
     )));
-    // control logo partner 6
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'esgi_partners_logo_6', array(
         'label' => __('Logo du partenaire 6', 'esgi'),
         'section' => 'esgi_partners',
@@ -523,4 +494,3 @@ function delete_argument_uri($url)
 
     return $base_url;
 }
-

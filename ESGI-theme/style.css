@@ -365,7 +365,7 @@ button, input, optgroup, select, textarea {
 }
 @media (min-width: 1280px) {
   .header .menu nav .main-menu li a {
-    font-size: 7rem;
+    font-size: 5.5rem;
   }
 }
 .header .menu nav .main-menu li a::after {
