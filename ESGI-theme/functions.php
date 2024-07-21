@@ -16,7 +16,7 @@ add_action('after_setup_theme', function () {
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('style', get_stylesheet_uri());
-    wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/burger.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/burger.js', array(), '1.0', true);
 });
 
 function img_uri()
@@ -129,7 +129,7 @@ function get_current_uri(): string
 
 function enqueue_custom_scripts()
 {
-    wp_enqueue_script('pagination-ajax', get_template_directory_uri() . '/assets/js/pagination-ajax.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('pagination-ajax', get_template_directory_uri() . '/assets/js/pagination-ajax.js', array(), '1.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
@@ -426,11 +426,6 @@ function esgi_get_partners()
         $partners['logo_' . $i] = get_theme_mod('esgi_partners_logo_' . $i);
     }
     return $partners;
-}
-
-function get_theme_path($path)
-{
-    return getcwd() . '/wp-content/themes/project_wordpress_ESGI/' . $path;
 }
 
 add_action('wp_ajax_foobar', 'esgi_search_posts');
