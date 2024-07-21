@@ -32,3 +32,9 @@ Sur mobile, le contenu passe en pile (stack)
 ## Rendu :
 Le thème sera rendu sous forme d'un fichier zip installable et fonctionnel.
 Lors de la soutenenance, les fichiers de travail absents du zip (sass ou autres) seront présentés.
+
+### Groupe : 
+
+-   Théo MEUNIER - [Github](https://github.com/TheoMeunier)
+-   Philippe DELENTE - [Github](https://github.com/PhilDaiguille)
+-   Quentin ANDRIEU - [Github](https://github.com/Tinou95)
